@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border : solid 2px;
+}
+table thead {
+    background-color: skyblue;
+}
