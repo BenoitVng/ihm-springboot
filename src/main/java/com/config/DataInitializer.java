@@ -14,11 +14,25 @@ public class DataInitializer {
     @Bean
     CommandLineRunner initDatabase(TraitementRepository repository) {
         return args -> {
-            repository.save(new Traitement(null, "Traitement A", "OK", LocalDate.now().minusDays(3), LocalDate.now()));
-            repository.save(new Traitement(null, "Traitement B", "KO", LocalDate.now().minusDays(10), LocalDate.now().minusDays(5)));
-            repository.save(new Traitement(null, "Traitement C", "EN_ATTENTE", LocalDate.now().minusDays(7), LocalDate.now().minusDays(2)));
-            repository.save(new Traitement(null, "Traitement D", "OK", LocalDate.now().minusDays(1), LocalDate.now()));
-            repository.save(new Traitement(null, "Traitement E", "KO", LocalDate.now().minusDays(4), LocalDate.now().minusDays(1)));
+            repository.save(new Traitement(
+                    "Organisme A", 101, LocalDate.now().minusDays(3), LocalDate.now(), "Domaine 1",
+                    "OUI", 2, "ODS A", "DWH A", "DTM Detail A"));
+
+            repository.save(new Traitement(
+                    "Organisme B", 102, LocalDate.now().minusDays(10), LocalDate.now().minusDays(5), "Domaine 2",
+                    "NON", 1, "ODS B", "DWH B", "DTM Detail B"));
+
+            repository.save(new Traitement(
+                    "Organisme C", 103, LocalDate.now().minusDays(7), LocalDate.now().minusDays(2), "Domaine 3",
+                    "OUI", 0, "ODS C", "DWH C", "DTM Detail C"));
+
+            repository.save(new Traitement(
+                    "Organisme D", 104, LocalDate.now().minusDays(1), LocalDate.now(), "Domaine 4",
+                    "OUI", 3, "ODS D", "DWH D", "DTM Detail D"));
+
+            repository.save(new Traitement(
+                    "Organisme E", 105, LocalDate.now().minusDays(4), LocalDate.now().minusDays(1), "Domaine 5",
+                    "NON", 1, "ODS E", "DWH E", "DTM Detail E"));
         };
     }
 }

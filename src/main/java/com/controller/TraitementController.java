@@ -14,7 +14,7 @@ import java.util.List;
 public class TraitementController {
 
     @Autowired
-    private TraitementService service;
+    private TraitementService service;  // Injection du service
 
     @GetMapping("/dashboard")
     public String dashboard(
@@ -22,6 +22,7 @@ public class TraitementController {
             @RequestParam(defaultValue = "asc") String order,
             Model model
     ) {
+        System.out.println("SortBy: " + sortBy + ", Order: " + order);
         List<Traitement> traitements = service.getAllSorted(sortBy, order);
         model.addAttribute("traitements", traitements);
         model.addAttribute("sortBy", sortBy);

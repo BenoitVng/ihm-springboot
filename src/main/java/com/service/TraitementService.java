@@ -13,7 +13,6 @@ public class TraitementService {
 
     @Autowired
     private TraitementRepository repo;
-
     public List<Traitement> getAll() {
         return repo.findAll();
     }

@@ -2,35 +2,32 @@
 <table>
     <thead>
     <tr>
-        <th>
-            <a th:href="@{'/dashboard'(sortBy='id', order=${(order == 'asc' and sortBy == 'id') ? 'desc' : 'asc'})}">ID</a>
-        </th>
-        <th>
-            <a th:href="@{'/dashboard'(sortBy='nom', order=${(order == 'asc' and sortBy == 'nom') ? 'desc' : 'asc'})}">Nom</a>
-        </th>
-        <th>
-            <a th:href="@{'/dashboard'(sortBy='statut', order=${(order == 'asc' and sortBy == 'statut') ? 'desc' : 'asc'})}">Statut</a>
-        </th>
-        <th>
-            <a th:href="@{/dashboard(sortBy='dateDebut', order=${order == 'asc' and sortBy == 'dateDebut' ? 'desc' : 'asc'})}">
-                Date Début
-            </a>
-        </th>
-        <th>
-            <a th:href="@{/dashboard(sortBy='dateFin', order=${order == 'asc' and sortBy == 'dateFin' ? 'desc' : 'asc'})}">
-                Date Fin
-            </a>
-        </th>
-
+        <th><a th:href="@{'/dashboard'(sortBy='id', order=${(order == 'asc' and sortBy == 'id') ? 'desc' : 'asc'})}">ID</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='organisme', order=${(order == 'asc' and sortBy == 'organisme') ? 'desc' : 'asc'})}">Organisme</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='codeCaisse', order=${(order == 'asc' and sortBy == 'codeCaisse') ? 'desc' : 'asc'})}">Code Caisse</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='dateTraitement', order=${(order == 'asc' and sortBy == 'dateTraitement') ? 'desc' : 'asc'})}">Date Traitement</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='dateEffective', order=${(order == 'asc' and sortBy == 'dateEffective') ? 'desc' : 'asc'})}">Date Effective</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='domaine', order=${(order == 'asc' and sortBy == 'domaine') ? 'desc' : 'asc'})}">Domaine</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='incrFullHist', order=${(order == 'asc' and sortBy == 'incrFullHist') ? 'desc' : 'asc'})}">Incr Full Hist</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='nbReemission', order=${(order == 'asc' and sortBy == 'nbReemission') ? 'desc' : 'asc'})}">Nb Réémission</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='ods', order=${(order == 'asc' and sortBy == 'ods') ? 'desc' : 'asc'})}">ODS</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='dwh', order=${(order == 'asc' and sortBy == 'dwh') ? 'desc' : 'asc'})}">DWH</a></th>
+        <th><a th:href="@{'/dashboard'(sortBy='dtmDetail', order=${(order == 'asc' and sortBy == 'dtmDetail') ? 'desc' : 'asc'})}">DTM Detail</a></th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="t : ${traitements}">
         <td th:text="${t.id}"></td>
-        <td th:text="${t.nom}"></td>
-        <td th:text="${t.statut}"></td>
-        <td th:text="${t.dateDebut}"></td>
-        <td th:text="${t.dateFin}"></td>
+        <td th:text="${t.organisme}"></td>
+        <td th:text="${t.codeCaisse}"></td>
+        <td th:text="${t.dateTraitement}"></td>
+        <td th:text="${t.dateEffective}"></td>
+        <td th:text="${t.domaine}"></td>
+        <td th:text="${t.incrFullHist}"></td>
+        <td th:text="${t.nbReemission}"></td>
+        <td th:text="${t.ods}"></td>
+        <td th:text="${t.dwh}"></td>
+        <td th:text="${t.dtmDetail}"></td>
     </tr>
     </tbody>
 </table>
