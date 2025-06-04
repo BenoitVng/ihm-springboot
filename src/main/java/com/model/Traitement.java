@@ -8,6 +8,8 @@ public class Traitement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String organisme;
+    private int codeCaisse;
 
     private String nom;
     private String statut;
